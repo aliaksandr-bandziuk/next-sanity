@@ -9,7 +9,7 @@ type Props = {
 
 export default async function Page({ params }: Props) {
   
-  const page = await getPage(params.slug);
+  const page: any = await getPage(params.slug);
 
   return (
     <div>
@@ -19,7 +19,7 @@ export default async function Page({ params }: Props) {
         {page.title}
       </h1>
 
-      <div className="text-lg text-gray-700 mt-10">
+      <div className="text-lg text-gray-700">
         <PortableText value={page.content} />
       </div>
     </div>
