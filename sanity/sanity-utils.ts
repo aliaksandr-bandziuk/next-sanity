@@ -19,8 +19,7 @@ export async function getProjects(): Promise<Project[]> {
       "slug": slug.current,
       "image": image.asset->url,
       url,
-      content,
-      next: { revalidate: 60 },
+      content
     }`
   )
 
@@ -42,8 +41,7 @@ export async function getProject(slug: string): Promise<Project> {
       "slug": slug.current,
       "image": image.asset->url,
       url,
-      content,
-      next: { revalidate: 60 },
+      content
     }`,
     { slug }
   )
@@ -56,9 +54,8 @@ export async function getPages(): Promise<Page[]> {
       _id,
       _createdAt,
       title,
-      "slug": slug.current,
-      next: { revalidate: 60 },
-    }`,
+      "slug": slug.current
+    }`
   )
 }
 
@@ -69,8 +66,7 @@ export async function getPage(slug: string): Promise<Page[]> {
       _createdAt,
       title,
       "slug": slug.current,
-      content,
-      next: { revalidate: 60 },
+      content
     }`,
     { slug }
   )
